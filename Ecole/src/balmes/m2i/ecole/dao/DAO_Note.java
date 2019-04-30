@@ -25,7 +25,7 @@ public class DAO_Note implements IDAO<Note> {
 			ps.setFloat(2, obj.getValeur());
 			ps.setString(3, obj.getMatiere().name());
 			ps.setInt(4, obj.getID_Eleve());
-			ps.setObject(5, obj.getDate());
+			ps.setDate(4, java.sql.Date.valueOf(note.getDate())); // converts a LOCALDATE instance into a SQL.DATE instance
 
 			return ps.executeUpdate();
 		} catch (SQLException e) {
