@@ -65,6 +65,9 @@ public class Eleve extends Personne implements Moyennable {
 	public void addNote(Note n) {
 		n.setID_Eleve(this.ID_Eleve);
 		this.notes.add(n);
+		
+		DAO_Note daon = new DAO_Note();
+		daon.create(n);
 	}
 
 	@Override
